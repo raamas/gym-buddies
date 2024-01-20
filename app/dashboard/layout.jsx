@@ -11,7 +11,7 @@ function Layout({ children }) {
 
   return (
     <div className="main bg-base-100 p-8">
-      <h1 className="text-3xl font-thin text-primary mb-6">{userFirstName}'s  Dashboard</h1>
+      <h1 className="text-3xl font-thin text-primary mb-6">{userFirstName + "'s "} Dashboard</h1>
 
       {children}
     </div>

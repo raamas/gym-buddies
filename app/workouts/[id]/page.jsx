@@ -26,8 +26,8 @@ function WorkoutPage({ params }) {
         <p>No. Member: {workout.userCount.count}</p>
         <div className="flex flex-col justify-center">
           {
-            workout?.exercises?.map((exercise) => {
-              return <Exercise exercise={exercise} />
+            workout?.exercises?.map((exercise, index) => {
+              return <Exercise key={index} exercise={exercise} />
             })
           }
         </div>

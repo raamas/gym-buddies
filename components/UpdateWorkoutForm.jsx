@@ -4,35 +4,29 @@ import React, { useEffect, useState } from 'react'
 import Exercise from './Exercise'
 import { v4 } from 'uuid'
 
-'use client'
-import { useState } from 'react'
-
-
-
-
 function UpdateExerciseForm({ exercise, workout, setWorkout, index }) {
-    const [updatedExercise, setUpdatedExercise] = useState({
-        name:  exercise.name,
-        reps: exercise.reps,
-        sets: exercise.sets
-    })
+    // const [updatedExercise, setUpdatedExercise] = useState({
+    //     name:  exercise.name,
+    //     reps: exercise.reps,
+    //     sets: exercise.sets
+    // })
 
-    const deleteExercise = ()=>{
-        setWorkout({ ...workout, exercises: [ ...workout.exercises.slice(0,index - 1), ...workout.exercises.slice(index+1)  ] })
-    }
+    // const deleteExercise = ()=>{
+    //     setWorkout({ ...workout, exercises: [ ...workout.exercises.slice(0,index - 1), ...workout.exercises.slice(index+1)  ] })
+    // }
 
-    const handleSubmit = (e) => {
-        e.preventDefault()
+    // const handleSubmit = (e) => {
+    //     e.preventDefault()
 
-        console.log(exercise)
+    //     console.log(exercise)
 
-        setWorkout({ ...workout, exercises: [...workout.exercises, updatedExercise] })
+    //     setWorkout({ ...workout, exercises: [...workout.exercises, updatedExercise] })
     
-    }
+    // }
 
     return (
         <div>
-            <div >
+            {/* <div >
                 <label>
                     <p className='mb-2'>Exercise Name</p>
                     <input type="text" name="name" id="exerciseName" className='input input-secondary w-full mb-4' value={updatedExercise.name} disabled />
@@ -47,7 +41,7 @@ function UpdateExerciseForm({ exercise, workout, setWorkout, index }) {
                 </label>
                 <button type="button" className='btn btn-outline btn-error w-full' onClick={deleteExercise}> Delete Exercise</button>  
                 <button type='submit' className='btn btn-outline btn-secondary w-full' onClick={handleSubmit}  > Add Exercise </button>
-            </div>
+            </div> */}
         </div>
     )
 }
@@ -55,17 +49,17 @@ function UpdateExerciseForm({ exercise, workout, setWorkout, index }) {
 
 
 function UpdateWorkoutForm({ type, handleSubmit, workout, setWorkout }) {
-    const [showExerciseForm, setShowExerciseForm] = useState(false)
-    const [updatedWorkout, setUpdatedWorkout] = useState({
-        name: workout.name,
-        exercises: [
-            ...workout.exercises
-        ]
-    })
+    // const [showExerciseForm, setShowExerciseForm] = useState(false)
+    // const [updatedWorkout, setUpdatedWorkout] = useState({
+    //     name: workout.name,
+    //     exercises: [
+    //         ...workout.exercises
+    //     ]
+    // })
 
     return (
         <div>
-            <form onSubmit={handleSubmit} className='flex flex-col flex-center'>
+            {/* <form onSubmit={handleSubmit} className='flex flex-col flex-center'>
                 <label>
                     <p>Workout Name</p>
                     <input type="text" name="name" id="workoutName" className='input input-primary w-full mb-4' value={updatedWorkout.name} onChange={(e) => setUpdatedWorkout({ ...updatedWorkout, [e.target.name]: e.target.value })} />
@@ -80,7 +74,7 @@ function UpdateWorkoutForm({ type, handleSubmit, workout, setWorkout }) {
                 </div>
 
                 <button type="submit" className='btn btn-primary w-full mb-4'>{type} workout</button>
-            </form>
+            </form> */}
         </div>
     )
 }
