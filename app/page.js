@@ -4,7 +4,7 @@ export default function Home() {
     <div className="main">
           <div className='hero bg-base-200 top-10 min-h-[70vh]'>
             <div className='hero-content items-center justify-center p-4'>
-              <span className='bg-clip-text bg-gradient-to-r from-primary via-secondary to-primary'>
+              <span className='bg-clip-text bg-gradient-to-r from-primary from-10% via-secondary to-primary to-85%'>
                 <h1 className='text-4xl font-extrabold text-transparent' >Take on a physical challenge and compete with your friends</h1>
               </span>
             </div>
