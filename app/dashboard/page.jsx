@@ -7,7 +7,7 @@ import { v4 } from 'uuid'
 import Workout from '@components/Workout.jsx'
 import { useWorkoutsStore } from "@utils/stores"
 
-function page() {
+function Dashboard() {
     const { data: session } = useSession()
     let workouts = useWorkoutsStore((state) => state.workoutsState)
     const getUserWorkouts =  useWorkoutsStore((state) => state.getUserWorkouts)
@@ -41,4 +41,4 @@ function page() {
     )
 }
 
-export default page
+export default Dashboard

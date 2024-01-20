@@ -2,10 +2,10 @@
 import { supabase } from "@utils/supabase.js"
 import { useSession } from "next-auth/react"
 import { useState } from "react"
-import Form from '@components/WorkoutForm.jsx'
+import CreateWorkoutForm from '@components/CreateWorkoutForm.jsx'
 import { useRouter } from 'next/navigation'
 
-function page() {
+function WorkoutCreate() {
   const { data: session } = useSession()
   const { push } = useRouter()
   const [workout, setWorkout] = useState({
@@ -47,7 +47,7 @@ function page() {
         <h2 className="font-semibold text-base-content mb-4">Create Workout</h2>
 
         <div className="text-base-content">
-          <Form
+          <CreateWorkoutForm
             type='Create'
             workout={workout}
             setWorkout={setWorkout}
@@ -59,4 +59,4 @@ function page() {
   )
 }
 
-export default page
+export default WorkoutCreate

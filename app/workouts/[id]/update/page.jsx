@@ -1,12 +1,12 @@
-// 'use client'
+'use client'
 // import { supabase } from "@utils/supabase.js"
 // import { useSession } from "next-auth/react"
 // import { useState } from "react"
 // import Form from '@components/Form.jsx'
 
-function page() {
-  const [workout, setWorkout] = useState
-  const { data: session } = useSession
+function WorkoutUpdate() {
+  const [workout, setWorkout] = useState()
+  const { data: session } = useSession()
 
   // const handleCreate = async (e) => {
   //   e.preventDefault()
@@ -49,4 +49,4 @@ function page() {
   )
 }
 
-export default page
+export default WorkoutUpdate

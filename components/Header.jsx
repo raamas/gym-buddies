@@ -40,9 +40,9 @@ function Header() {
                         :
                         <>
                             {providers && Object.values(providers).map((provider) => {
-                                return <li>
+                                return <li key={providers.id}>
                                     {console.log(provider)}
-                                    <button type="button" key={providers.id} onClick={() => signIn(provider.id)} className="btn btn-outline btn-primary">Sign In with {provider.name} </button>
+                                    <button type="button"  onClick={() => signIn(provider.id)} className="btn btn-outline btn-primary">Sign In with {provider.name} </button>
                                 </li>
                             })}
                         </>

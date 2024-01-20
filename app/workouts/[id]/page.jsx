@@ -3,7 +3,7 @@ import Exercise from "@components/Exercise"
 import { getWorkout } from "@utils/functions"
 import { useEffect, useState } from "react"
 
-function page({ params }) {
+function WorkoutPage({ params }) {
   const [workout, setWorkout] = useState({})
 
   useEffect(() => {
@@ -36,4 +36,4 @@ function page({ params }) {
   )
 }
 
-export default page
+export default WorkoutPage

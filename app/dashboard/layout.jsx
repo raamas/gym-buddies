@@ -3,7 +3,7 @@
 import React from 'react'
 import { useSession } from "next-auth/react"
 
-function layout({ children }) {
+function Layout({ children }) {
   const { data: session } = useSession()
 
   const userFirstName = session?.user.name.split(' ')[0]
@@ -18,4 +18,4 @@ function layout({ children }) {
   )
 }
 
-export default layout
+export default Layout
