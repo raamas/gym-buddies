@@ -32,7 +32,7 @@ function WorkoutUpdate() {
   // }
 
   return (
-    <main className="flex flex-col justify-center">
+    <main className="min-h-100vh flex flex-col justify-center">
       {/* <section className="shared_workouts max-w-md" >
         <h2 className="font-semibold text-base-content mb-4">Create Workout</h2>
 
