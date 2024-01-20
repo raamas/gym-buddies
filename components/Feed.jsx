@@ -49,7 +49,7 @@ function Feed() {
 
       <div className="popularWorkouts w-3/4">
         {workouts?.map((workout) => {
-          return <Workout workout={workout} />;
+          return <Workout workout={workout} key={workout.id}/>;
         })}
       </div>
     </section>
