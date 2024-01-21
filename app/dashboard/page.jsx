@@ -6,8 +6,8 @@ import Link from "next/link";
 import { v4 } from "uuid";
 import Workout from "@components/Workout.jsx";
 import { useWorkoutsStore } from "@utils/stores";
-import { getServerSession } from ‘next-auth’
-import { redirect } from ‘next/navigation’
+import { getServerSession } from "next-auth"
+import { redirect } from "next/navigation"
 
 
 async function Dashboard() {
