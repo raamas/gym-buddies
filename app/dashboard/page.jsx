@@ -8,11 +8,12 @@ import Workout from "@components/Workout.jsx";
 import { useWorkoutsStore } from "@utils/stores";
 import { getServerSession } from "next-auth"
 import { redirect } from "next/navigation"
+import { authOptions } from "@app/api/auth/[...nextauth]/route.js
 
 
 async function Dashboard() {
   const { data: session } = useSession();
-  const serverSession = await getServerSession()
+  const serverSession = await getServerSession(authOptions)
   let workouts = useWorkoutsStore((state) => state.workoutsState);
   const getUserWorkouts = useWorkoutsStore((state) => state.getUserWorkouts);
 
