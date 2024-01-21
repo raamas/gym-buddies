@@ -6,12 +6,20 @@ import Link from "next/link";
 import { v4 } from "uuid";
 import Workout from "@components/Workout.jsx";
 import { useWorkoutsStore } from "@utils/stores";
+import { getServerSession } from "next-auth"
+import { redirect } from "next/navigation"
 
-function Dashboard() {
+
+async function Dashboard() {
   const { data: session } = useSession();
+  const serverSession = await getServerSession()
   let workouts = useWorkoutsStore((state) => state.workoutsState);
   const getUserWorkouts = useWorkoutsStore((state) => state.getUserWorkouts);
 
+  if(!serverSession || !serverSession.user){
+    redirect("/api/auth/signin")
+  }
+  
   useEffect(() => {
     const invokeGetUserWorkouts = () => {
       getUserWorkouts({
