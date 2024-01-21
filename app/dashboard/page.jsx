@@ -17,7 +17,7 @@ async function Dashboard() {
   const getUserWorkouts = useWorkoutsStore((state) => state.getUserWorkouts);
 
   if(!serverSession || !serverSession.user){
-    redirect(‘/api/auth/signin’)
+    redirect("/api/auth/signin")
   }
   
   useEffect(() => {
