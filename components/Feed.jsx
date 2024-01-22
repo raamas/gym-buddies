@@ -9,10 +9,10 @@ function Workout({ workout }) {
   return (
     <div
       key={workout.id}
-      className="card card-bordered bg-base-100 flex flex-col items-center mb-4 p-4 shadow shadow-sm"
+      className="card card-bordered bg-base-100 flex flex-col items-center justify-center mb-4 p-4 shadow shadow-sm min-w-64 min-h-72"
     >
       <Link href={`/workouts/${workout.id}/`}>
-        <h2 className="text-primary mb-4 text-xl">{workout.name}</h2>
+        <h2 className="text-base-content mb-4 text-xl">{workout.name}</h2>
       </Link>
       <span className="flex gap-3">
         <p className="mb-4 text-base-content">
@@ -42,12 +42,10 @@ function Feed() {
   }, []);
 
   return (
-    <section className="flex flex-col max-w-lg items-center p-8 bg-base-100">
-      <div className="bg-clip-text bg-gradient-to-r from-primary from-75% to-secondary to-90% mb-4">
-        <h1 className="text-2xl font-light text-transparent">Feed</h1>
-      </div>
+    <section className="flex flex-col w-full items-center p-8 m-2 bg-base-100 text-center">
+        <h1 className="text-3xl font-light text-primary mb-4">Feed</h1>
 
-      <div className="popularWorkouts w-3/4">
+      <div className="popularWorkouts w-3/4 md:flex-row flex flex-col items-center gap-5">
         {workouts?.map((workout) => {
           return <Workout workout={workout} key={workout.id}/>;
         })}
