@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import { useState } from "react";
 import Exercise from "./Exercise";
 import { v4 } from "uuid";
 
@@ -69,12 +69,51 @@ function ExerciseForm({ workout, setWorkout, setShow }) {
   );
 }
 
-function CreateWorkoutForm({ type, handleSubmit, workout, setWorkout }) {
+function CreateWorkoutForm() {
   const [showExerciseForm, setShowExerciseForm] = useState(false);
+  const { data: session } = useSession();
+  const { push } = useRouter();
+  const [workout, setWorkout] = useState({
+    name: "",
+    exercises: [],
+    isPublic: true,
+  });
+
+  const handleCreate = async (e) => {
+    e.preventDefault();
+
+    try {
+      let res = await supabase
+        .from("workouts")
+        .insert({
+          name: workout.name.toLowerCase(),
+          exercises: workout.exercises,
+        })
+        .select()
+        .single();
+
+      let workoutId = res.data?.id;
+
+      res = await supabase.from("users_workouts").insert({
+        userId: session.user.id,
+        workoutId: workoutId,
+      });
+
+      push("/dashboard");
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  useEffect(() => {
+    if (!session) {
+      redirect("/api/auth/signin");
+    }
+  }, []);
 
   return (
     <div>
-      <form onSubmit={handleSubmit} className="flex flex-col flex-center">
+      <form onSubmit={handleCreate} className="flex flex-col flex-center">
         <label>
           <span className="label-text">Workout Name</span>
           <input
@@ -126,7 +165,7 @@ function CreateWorkoutForm({ type, handleSubmit, workout, setWorkout }) {
         </label>
 
         <button type="submit" className="btn btn-primary w-full mb-4">
-          {type} workout
+          Create workout
         </button>
       </form>
     </div>
