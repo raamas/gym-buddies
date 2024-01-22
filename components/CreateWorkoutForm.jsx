@@ -1,9 +1,10 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Exercise from "./Exercise";
 import { v4 } from "uuid";
 import { useSession } from "next-auth/react";
+import { useRouter } from "next/router";
 
 function ExerciseForm({ workout, setWorkout, setShow }) {
   const [exercise, setExercise] = useState({
