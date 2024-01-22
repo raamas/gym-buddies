@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import Exercise from "./Exercise";
 import { v4 } from "uuid";
 import { useSession } from "next-auth/react";
-import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
 
 function ExerciseForm({ workout, setWorkout, setShow }) {
   const [exercise, setExercise] = useState({
