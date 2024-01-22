@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Exercise from "./Exercise";
 import { v4 } from "uuid";
+import { useSession } from "next-auth/react";
 
 function ExerciseForm({ workout, setWorkout, setShow }) {
   const [exercise, setExercise] = useState({
