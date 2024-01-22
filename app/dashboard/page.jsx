@@ -8,7 +8,7 @@ import Workout from "@components/Workout.jsx";
 import { useWorkoutsStore } from "@utils/stores";
 
 
-async function Dashboard() {
+function Dashboard() {
   const { data: session } = useSession();
   let workouts = useWorkoutsStore((state) => state.workoutsState);
   const getUserWorkouts = useWorkoutsStore((state) => state.getUserWorkouts);
