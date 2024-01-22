@@ -30,3 +30,5 @@ return(
         </div>
 )
 }
+
+export default UserWorkouts;
