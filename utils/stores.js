@@ -9,7 +9,7 @@ export const useWorkoutsStore = create((set) => ({
             name,
             isPublic,
             exercises,
-            users!users_workouts(count)
+            users!users_workouts(id,name)
         `);
 
     if (workouts) {
