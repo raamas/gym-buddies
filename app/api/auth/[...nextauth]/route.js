@@ -33,7 +33,7 @@ export const authOptions = {
           res = await supabase
             .from("users")
             .insert({
-              username: generateUsername("", 3, 12),
+              // username: generateUsername("", 3, 12),
               email: profile.email,
               name: profile.name,
             })
