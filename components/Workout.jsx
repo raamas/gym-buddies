@@ -6,11 +6,11 @@ import { useSession } from "next-auth/react";
 import Link from "next/link";
 
 function WorkoutMember({ memberName, isLast }) {
-  if (isLast) {
-    return <p>{memberName}.</p>;
-  } else {
-    return <p>{memberName}, </p>;
-  }
+  return isLast ? (
+    <p className="font-light">{memberName}, </p>
+  ) : (
+    <p className="font-light">{memberName}.</p>
+  );
 }
 
 function Workout({ workout }) {
@@ -31,27 +31,32 @@ function Workout({ workout }) {
   return (
     <div
       key={workout.id}
-      className="card card-bordered bg-base-100 flex flex-col items-center mb-4 p-4 shadow shadow-sm"
+      className="card card-bordered bg-base-100 border-base-300 flex flex-col items-center justify-between mb-4 p-4 shadow shadow-sm min-h-80 min-w-full"
     >
       <Link href={`/workouts/${workout.id}/`}>
-        <h2 className="text-primary mb-2 text-xl">{workout.name}</h2>
+        <h2 className="text-primary mb-2 text-xl font-semibold ">
+          {workout.name}
+        </h2>
       </Link>
-      <p className="mb-4">
-        {workout.isPublic ? "Public Workout" : "Private Workout"}
-      </p>
-      <span className="flex gap-3">
-        <h3>Members:</h3>
 
-        {workout.users?.map((member, index) => {
-          return (
-            <WorkoutMember
-              memberName={member.name.split(" ")[0]}
-              isLast={index + 1 == workout.users.length}
-              key={v4()}
-            />
-          );
-        })}
-      </span>
+      <div className="mb-2">
+        <p className="mb font-light">
+          {workout.isPublic ? "Public Workout" : "Private Workout"}
+        </p>
+        <span className="flex gap-1">
+          <h3 className="font-light">Members:</h3>
+
+          {workout.users?.map((member, index) => {
+            return (
+              <WorkoutMember
+                memberName={member.name.split(" ")[0]}
+                isLast={index + 1 == workout.users.length}
+                key={v4()}
+              />
+            );
+          })}
+        </span>
+      </div>
 
       {workout.exercises.map((exercise) => {
         return <Exercise exercise={exercise} key={v4()} />;

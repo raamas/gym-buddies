@@ -20,7 +20,7 @@ function Header() {
 
 
     return (
-        <nav className="w-full sticky top-0 z-10 bg-base-100/95 border-b border-base-300 backdrop-blur-md flex items-center justify-evenly p-4 shadow shadow-sm">
+        <nav className="w-full sticky top-0 z-10 bg-base-100/95 border-b border-base-300 backdrop-blur-md flex items-center justify-around p-4 shadow shadow-sm">
             <h1 className='text-primary font-bold text-sm'> <Link href='/'>Gym Buddies</Link> </h1>
             <ul className='flex text-primary gap-3 items-center'>
                 {
