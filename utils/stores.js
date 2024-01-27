@@ -9,12 +9,12 @@ export const useWorkoutsStore = create((set) => ({
             name,
             isPublic,
             exercises,
-            users!users_workouts(id,name)
+            users!users_workouts(count)
         `);
 
     if (workouts) {
       workouts = workouts.filter((workout) =>
-        workout.users.some((u) => (u.id = user.id))
+        workout.users.find((u) => (u.id = user.id))
       );
 
       set((state) => ({
