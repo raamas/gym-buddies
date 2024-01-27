@@ -14,7 +14,7 @@ export const useWorkoutsStore = create((set) => ({
 
     if (workouts) {
       workouts = workouts.filter((workout) =>
-        workout.users.find((u) => (u.id = user.id))
+        workout.users.find((u) => (u.id == user.id))
       );
 
       set((state) => ({
