@@ -120,7 +120,7 @@ function CreateWorkoutForm() {
 
   useEffect(() => {
     if (!session) {
-      push("/api/auth/signin");
+      push("/api/auth/google");
     }
   }, []);
 
