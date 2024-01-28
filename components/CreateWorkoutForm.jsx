@@ -85,32 +85,42 @@ function CreateWorkoutForm() {
   const handleCreate = async (e) => {
     e.preventDefault();
 
-    try {
-      let res = await supabase
-        .from("workouts")
-        .insert({
-          name: workout.name.toLowerCase(),
-          exercises: workout.exercises,
-        })
-        .select()
-        .single();
+    let { data: newWorkout, error: newWorkoutError } = await supabase
+      .from("workouts")
+      .insert({
+        creatorId: session.user.id,
+        name: workout.name.toLowerCase(),
+        exercises: workout.exercises,
+      })
+      .select()
+      .single();
 
-      let workoutId = res.data?.id;
+    if (newWorkoutError) {
+      console.log(newWorkoutError);
+      push("/");
+      return;
+    }
 
-      res = await supabase.from("users_workouts").insert({
+    let { data: workoutRelation, error: workoutRelationError } = await supabase
+      .from("users_workouts")
+      .insert({
         userId: session.user.id,
-        workoutId: workoutId,
+        workoutId: newWorkout.id,
       });
 
-      push("/dashboard");
-    } catch (error) {
-      console.log(error);
+    if (workoutRelationError) {
+      console.log(workoutRelationError);
+      push("/");
+      return;
     }
+    
+    console.log(workoutRelation);
+    push("/dashboard");
   };
 
   useEffect(() => {
     if (!session) {
-      redirect("/api/auth/signin");
+      push("/api/auth/signin");
     }
   }, []);
 

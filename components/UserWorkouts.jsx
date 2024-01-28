@@ -27,7 +27,7 @@ function UserWorkouts() {
   }, []);
 
   return (
-    <div className="text-base-content w-full flex flex-col items-start gap-5 md:flex-row">
+    <div className="text-base-content w-full flex flex-col flex-wrap items-start gap-5 md:flex-row">
       {workouts.map((workout) => {
         return <Workout workout={workout} key={v4()} />;
       })}
