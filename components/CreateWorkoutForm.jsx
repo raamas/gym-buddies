@@ -5,6 +5,7 @@ import Exercise from "./Exercise";
 import { v4 } from "uuid";
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
+import { supabase } from "@utils/supabase";
 
 function ExerciseForm({ workout, setWorkout, setShow }) {
   const [exercise, setExercise] = useState({
