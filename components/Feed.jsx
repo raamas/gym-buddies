@@ -45,7 +45,7 @@ function Feed() {
 
   return (
     <section className="flex flex-col w-full items-center p-8 m-2 bg-base-100 text-center">
-      <h1 className="text-3xl font-light text-primary mb-6">Feed</h1>
+      <h1 className="text-3xl font-light text-secondary mb-6">Feed</h1>
 
       <div className="popularWorkouts w-3/4 md:flex-row flex flex-col items-center gap-5">
         {workouts?.map((workout) => {

@@ -12,7 +12,7 @@ function Dashboard() {
         </h2>
         <UserWorkouts />
 
-        <Link href="/workouts/create" className="btn btn-primary w-full">
+        <Link href="/workouts/create" className="btn btn-secondary w-full">
           Create a new workout
         </Link>
       </section>

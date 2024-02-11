@@ -34,7 +34,7 @@ function Workout({ workout }) {
       className="card card-bordered bg-base-100 border-base-300 flex flex-col items-center justify-between mb-4 p-4 shadow shadow-sm min-h-80 min-w-full"
     >
       <Link href={`/workouts/${workout.id}/`}>
-        <h2 className="text-primary mb-2 text-xl font-semibold ">
+        <h2 className="text-secondary mb-2 text-xl font-semibold ">
           {workout.name}
         </h2>
       </Link>

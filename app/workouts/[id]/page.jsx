@@ -27,7 +27,7 @@ const handleClick = (e)=>{
   return (
     <main className="min-h-100vh flex flex-col items-center bg-base-100 text-base-content">
       <section className="flex flex-col max-w-xl justify-center p-8 ">
-        <h2 className="text-3xl text-primary font-semibold mb-4">
+        <h2 className="text-3xl text-secondary font-semibold mb-4">
           {workout.name}
         </h2>
         <p className="">Creator: {workout.creator?.name}</p>
@@ -44,7 +44,7 @@ const handleClick = (e)=>{
           })}
         </div>
         <button
-          className="btn btn-primary w-full"
+          className="btn btn-secondary w-full"
           onClick={() => handleClick(e)}
           disabled={ (session && session.user.id == workout.creator?.id) }
         >

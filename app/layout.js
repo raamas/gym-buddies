@@ -14,7 +14,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" data-theme='sunset' className={dmSans.className}>
+    <html lang="en" data-theme='bumblebee' className={dmSans.className}>
       <body >
         <Provider>
           <Header />

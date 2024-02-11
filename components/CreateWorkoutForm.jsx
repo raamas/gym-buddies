@@ -32,7 +32,7 @@ function ExerciseForm({ workout, setWorkout, setShow }) {
             type="text"
             name="name"
             id="exerciseName"
-            className="input input-secondary w-full mb-4"
+            className="input input-accent w-full mb-4"
             value={exercise.name}
             onChange={(e) => setExercise({ ...exercise, name: e.target.value })}
           />
@@ -43,7 +43,7 @@ function ExerciseForm({ workout, setWorkout, setShow }) {
             type="number"
             name="reps"
             id="exerciseReps"
-            className="input input-secondary w-full mb-4"
+            className="input input-accent w-full mb-4"
             value={exercise.reps}
             onChange={(e) => setExercise({ ...exercise, reps: e.target.value })}
           />
@@ -54,14 +54,14 @@ function ExerciseForm({ workout, setWorkout, setShow }) {
             type="number"
             name="sets"
             id="exerciseSets"
-            className="input input-secondary w-full mb-4"
+            className="input input-accent w-full mb-4"
             value={exercise.sets}
             onChange={(e) => setExercise({ ...exercise, sets: e.target.value })}
           />
         </label>
         <button
           type="submit"
-          className="btn btn-outline btn-secondary w-full"
+          className="btn btn-outline btn-accent w-full"
           onClick={handleSubmit}
         >
           {" "}
@@ -133,7 +133,7 @@ function CreateWorkoutForm() {
             type="text"
             name="name"
             id="workoutName"
-            className="input input-primary w-full mb-4"
+            className="input input-secondary w-full mb-4"
             value={workout.name}
             onChange={(e) =>
               setWorkout({ ...workout, [e.target.name]: e.target.value })
@@ -158,7 +158,7 @@ function CreateWorkoutForm() {
         ) : (
           <button
             type="submit"
-            className="btn btn-primary w-full mb-4"
+            className="btn btn-secondary w-full mb-4"
             onClick={() => setShowExerciseForm(true)}
           >
             add exercise
@@ -177,7 +177,7 @@ function CreateWorkoutForm() {
           />
         </label>
 
-        <button type="submit" className="btn btn-primary w-full mb-4">
+        <button type="submit" className="btn btn-secondary w-full mb-4">
           Create workout
         </button>
       </form>
