@@ -44,17 +44,9 @@ function Workout({ workout }) {
           {workout.isPublic ? "Public Workout" : "Private Workout"}
         </p>
         <span className="flex gap-1">
-          <h3 className="font-light">Members:</h3>
+          <h3 className="font-light">Saves:</h3>
 
-          {workout.users?.map((member, index) => {
-            return (
-              <WorkoutMember
-                memberName={member.name.split(" ")[0]}
-                isLast={index + 1 == workout.users.length}
-                key={v4()}
-              />
-            );
-          })}
+          {workout.users?.length}
         </span>
       </div>
 
