@@ -32,7 +32,7 @@ const handleClick = (e)=>{
         </h2>
         <p className="">Creator: {workout.creator?.name}</p>
         {console.log(workout.userCount)}
-        <p className="mb-4">{workout.userCount?.[0].count} saves!</p>
+        <p className="mb-4">Saves: {workout.userCount?.[0].count}</p>
         <div className="flex flex-col justify-center">
           {workout?.exercises?.map((exercise, index) => {
             return (
