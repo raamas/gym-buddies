@@ -18,7 +18,7 @@ function Workout({ workout }) {
       </Link>
       <span className="flex gap-3">
         <p className="mb-4 text-base-content font-light">
-          No. Member: {workout.userCount?.[0].count}
+          {workout.userCount?.[0].count} saves!
         </p>
       </span>
 
