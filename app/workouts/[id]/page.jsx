@@ -45,10 +45,10 @@ const handleClick = (e)=>{
         </div>
         <button
           className="btn btn-secondary w-full"
-          onClick={() => handleClick(e)}
+          onClick={(e) => handleClick(e)}
           disabled={ (session && session.user.id == workout.creator?.id) }
         >
-          Join Workout
+          Save Workout
         </button>
       </section>
     </main>
