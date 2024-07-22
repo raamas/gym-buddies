@@ -1,52 +1,32 @@
-'use client'
-// import { supabase } from "@utils/supabase.js"
-// import { useSession } from "next-auth/react"
-// import { useState } from "react"
-// import Form from '@components/Form.jsx'
+"use client";
 
-function WorkoutUpdate() {
-  const [workout, setWorkout] = useState()
-  const { data: session } = useSession()
+import WorkoutForm from "@components/UpdateWorkout/WorkoutForm";
+import { useState, useEffect } from "react";
+import { getWorkout } from "@utils/functions";
 
-  // const handleCreate = async (e) => {
-  //   e.preventDefault()
+function WorkoutUpdate({ params }) {
+	const [workout, setWorkout] = useState({});
 
-  //   try {
-  //     let res = await supabase
-  //       .from('workouts')
-  //       .update({
-  //         ...workout
-  //       })
-  //       .eq(id, workoutId)
+	useEffect(() => {
+		const invokeGetWorkout = async () => {
+			let data = await getWorkout(params.id);
+			setWorkout(data);
+		};
 
-  //     res = await supabase
-  //       .from('users_workouts')
-  //       .insert({
-  //         userId: session.user.id,
-  //         workoutId: res.data.id
-  //       }
-  //       )
-  //   } catch (error) {
-  //     console.log(error)
-  //   }
-  // }
+		invokeGetWorkout();
+	}, [params.id]);
 
-  return (
-    <main className="min-h-100vh flex flex-col justify-center">
-      {/* <section className="shared_workouts max-w-md" >
-        <h2 className="font-semibold text-base-content mb-4">Create Workout</h2>
+	return (
+		<main className="min-h-100vh flex flex-col justify-center bg-base-100 ">
+			<section className="flex flex-col max-w-md justify-center items-center p-8 bg-base-100">
+				<h2 className="font-semibold text-base-content mb-4">Create Workout</h2>
 
-        <div className="text-base-content">
-          <Form
-            type='create'
-            workout={workout}
-            setWorkout={setWorkout}
-            handleSubmit={handleCreate}
-          />
-        </div>
-      </section> */}
-    </main>
-  )
+				<div className="text-base-content flex flex-col items-center justify-center w-full">
+					<WorkoutForm workout={workout} />
+				</div>
+			</section>
+		</main>
+	);
 }
 
-export default WorkoutUpdate
+export default WorkoutUpdate;

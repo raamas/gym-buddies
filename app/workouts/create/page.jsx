@@ -1,4 +1,4 @@
-import CreateWorkoutForm from "@components/CreateWorkoutForm.jsx";
+import CreateWorkoutForm from "@components/CreateWorkout/CreateWorkoutForm.jsx";
 
 function WorkoutCreate() {
   return (

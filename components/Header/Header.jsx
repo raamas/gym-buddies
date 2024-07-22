@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useSession, signIn, signOut, getProviders } from "next-auth/react";
 import { useState, useEffect } from "react";
 import Image from "next/image";
+import ProviderButton from "./ProviderButton";
 
 function Header() {
 	const { data: session } = useSession();
@@ -62,16 +63,7 @@ function Header() {
 						{providers &&
 							Object.values(providers).map((provider) => {
 								return (
-									<li key={providers.id}>
-										{console.log(provider)}
-										<button
-											type="button"
-											onClick={() => signIn(provider.id)}
-											className="btn btn-outline btn-secondary"
-										>
-											Sign In with {provider.name}{" "}
-										</button>
-									</li>
+									<ProviderButton provider={provider} key={provider.id} signIn={signIn} />
 								);
 							})}
 					</>

@@ -1,7 +1,6 @@
 import { supabase } from "./supabase";
 
 export const getWorkout = async (workoutId) => {
-  console.log(`getting workout ${workoutId}`);
 
   const { data: workout, error } = await supabase
     .from("workouts")
@@ -17,11 +16,8 @@ export const getWorkout = async (workoutId) => {
     .eq("id", workoutId)
     .single();
 
-  console.log(workout);
-  console.log(error);
 
   if (workout) {
-    console.log(workout);
     return workout;
   } else {
     console.log(error);
@@ -29,7 +25,6 @@ export const getWorkout = async (workoutId) => {
 };
 
 export const joinWorkout = async (workoutId, userId) => {
-  console.log(`joining workout ${workoutId}`);
 
   const { data: workout, error } = await supabase
     .from("users_workouts")
@@ -40,13 +35,18 @@ export const joinWorkout = async (workoutId, userId) => {
     .select()
     .single();
 
-  console.log(workout);
-  console.log(error);
 
   if (workout) {
-    console.log(workout);
     return workout;
   } else {
     console.log(error);
   }
 };
+
+export const deleteExercise = (exercises, exercise)=>{
+  let newExercises = exercises.filter((e)=>{
+    return e.name != exercise
+  })
+
+  return newExercises
+}

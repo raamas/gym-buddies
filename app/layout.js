@@ -1,4 +1,4 @@
-import Header from '@components/Header.jsx'
+import Header from '@components/Header/Header.jsx'
 import '@styles/globals.css'
 import Provider from '@components/Provider.jsx'
 import { DM_Sans } from 'next/font/google'

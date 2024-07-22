@@ -17,7 +17,6 @@ const handleClick = (e)=>{
   useEffect(() => {
     const invokeGetWorkout = async () => {
       let data = await getWorkout(params.id);
-      console.log(data);
       setWorkout(data);
     };
 
