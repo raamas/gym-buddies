@@ -40,7 +40,7 @@ function Workout({ workout }) {
 				<span className="flex gap-1">
 					<h3 className="font-light">Saves:</h3>
 
-					{workout.users?.length}
+					{workout?.userCount[0].count}
 				</span>
 			</div>
 

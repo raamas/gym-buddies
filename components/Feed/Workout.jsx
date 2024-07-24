@@ -15,11 +15,6 @@ function Workout({ workout }) {
 					{workout.name}
 				</h2>
 			</Link>
-			<span className="flex gap-3">
-				<p className="mb-4 text-base-content font-light">
-					Saves: {workout.userCount?.[0].count}
-				</p>
-			</span>
 
 			{workout.exercises.map((exercise, i) => {
 				return i < 2 ? (
@@ -31,6 +26,11 @@ function Workout({ workout }) {
 					<></>
 				);
 			})}
+			<span className="flex flex-start gap-3">
+				<p className="mb-4 text-neutral-content font-light">
+					{workout.userCount?.[0].count} saves
+				</p>
+			</span>
 		</div>
 	);
 }
