@@ -2,14 +2,14 @@
 import { useSession } from "next-auth/react";
 import { useEffect } from "react";
 import Workout from "@components/Workout.jsx";
-import { useWorkoutsStore } from "@utils/stores";
+import { useUserStore } from "@utils/stores";
 import { v4 } from "uuid";
 import { redirect } from "next/navigation";
 
 function UserWorkouts() {
   const { data: session } = useSession();
-  let workouts = useWorkoutsStore((state) => state.workoutsState);
-  const getUserWorkouts = useWorkoutsStore((state) => state.getUserWorkouts);
+  let workouts = useUserStore((state) => state.workoutsState);
+  const getUserWorkouts = useUserStore((state) => state.getUserWorkouts);
 
   useEffect(() => {
     if (!session) {

@@ -1,4 +1,4 @@
-import { useWorkoutsStore } from "@utils/stores";
+import { useUserStore } from "@utils/stores";
 import Exercise from "@components/Exercise";
 import { supabase } from "@utils/supabase";
 import { v4 } from "uuid";
@@ -9,7 +9,7 @@ import Link from "next/link";
 function Workout({ workout }) {
 	const {push} = useRouter();
 	const { data: session } = useSession();
-	let getUserWorkouts = useWorkoutsStore((state) => state.getUserWorkouts);
+	let getUserWorkouts = useUserStore((state) => state.getUserWorkouts);
 
 	const deleteWorkout = async (workoutId) => {
 		let res = await supabase.from("workouts").delete().eq("id", workoutId);
