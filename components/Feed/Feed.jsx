@@ -15,7 +15,7 @@ function Feed() {
     };
 
     invokeGetWorkouts();
-  }, []);
+  }, [getWorkouts, workouts]);
 
   return (
     <section className="flex flex-col w-full items-center p-8 m-2 bg-base-100 text-center">

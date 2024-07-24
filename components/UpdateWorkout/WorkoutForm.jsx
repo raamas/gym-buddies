@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import ExerciseCard from "./ExerciseCard"; 
 import { supabase } from "@utils/supabase";
 import { useRouter } from "next/navigation";
+import {v4} from "uuid"
 
 function WorkoutForm({ workout }) {
 	const [newWorkout, setNewWorkout] = useState({});
@@ -61,6 +62,7 @@ function WorkoutForm({ workout }) {
 				{newWorkout?.exercises?.map((exercise) => {
 					return (
 						<ExerciseCard
+						key={v4()}
 							exercise={exercise}
 							workout={newWorkout}
 							setWorkout={setNewWorkout}

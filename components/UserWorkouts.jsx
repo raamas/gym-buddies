@@ -24,7 +24,7 @@ function UserWorkouts() {
     };
 
     invokeGetUserWorkouts();
-  }, []);
+  }, [getUserWorkouts, session]);
 
   return (
     <div className="text-base-content w-full flex flex-col flex-wrap items-start gap-5 md:flex-row">

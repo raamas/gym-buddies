@@ -58,7 +58,7 @@ function CreateWorkoutForm() {
 		if (!session) {
 			push("/api/auth/google/signin");
 		}
-	}, []);
+	}, [push, session]);
 
 	return (
 		<div>

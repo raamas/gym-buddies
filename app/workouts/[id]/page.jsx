@@ -21,7 +21,7 @@ const handleClick = (e)=>{
     };
 
     invokeGetWorkout();
-  }, []);
+  }, [params.id]);
 
   return (
     <main className="min-h-100vh flex flex-col items-center bg-base-100 text-base-content">
