@@ -9,13 +9,16 @@ export const useWorkoutsStore = create((set) => ({
             name,
             isPublic,
             exercises,
-            users!users_workouts(id,name)
+            users!users_workouts(id,name),
+            createdAt
         `);
 
     if (workouts) {
       workouts = workouts.filter((workout) =>
         workout.users.find((u) => (u.id == user.id))
       );
+
+      workouts = workouts.sort((a,b)=>a.createdAt-b.createdAt)
 
       set((state) => ({
         ...state,
@@ -41,7 +44,7 @@ export const useWorkoutsStore = create((set) => ({
       .limit(50);
 
     if (workouts) {
-      workouts = workouts.sort();
+      workouts = workouts.sort((a,b)=>a.userCount[0].count-b.userCount[0].count).reverse();
 
       console.log(workouts);
       set((state) => ({
