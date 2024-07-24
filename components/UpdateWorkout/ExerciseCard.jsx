@@ -1,4 +1,5 @@
-// import React from "react";
+"use client"
+
 import ExerciseForm from "./ExerciseForm";
 import { FaTrashCan, FaPen } from "react-icons/fa6";
 import {deleteExercise} from "@utils/functions";
@@ -48,4 +49,4 @@ function ExerciseCard({ exercise, workout, setWorkout }) {
 	);
 }
 
-export default ExerciseCard;
+export default ExerciseCard; 

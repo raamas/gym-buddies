@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import ExerciseCard from "./ExerciseCard";
+import ExerciseCard from "./ExerciseCard"; 
 import { supabase } from "@utils/supabase";
 import { useRouter } from "next/navigation";
 
