@@ -11,7 +11,7 @@ export const useWorkoutsStore = create((set) => ({
             exercises,
             users!users_workouts(id,name),
             createdAt
-        `);
+        `).eq("users.id",user.id);
 
     if (workouts) {
       workouts = workouts.filter((workout) =>
