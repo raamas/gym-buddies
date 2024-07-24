@@ -8,7 +8,7 @@ function Workout({ workout }) {
 	return (
 		<div
 			key={workout.id}
-			className="card card-bordered bg-base-100 border-base-300 flex flex-col items-center justify-start mb-4 p-4 pt-6 shadow shadow-sm min-w-64 min-h-72 max-h-72"
+			className="card card-bordered bg-base-100 border-base-300 flex flex-col items-center justify-between mb-4 p-4 pt-6 shadow shadow-sm min-w-64 min-h-72 max-h-72"
 		>
 			<Link href={`/workouts/${workout.id}/`}>
 				<h2 className="text-base-content mb-2 text-xl font-semibold text-wrap">
@@ -26,7 +26,7 @@ function Workout({ workout }) {
 					<></>
 				);
 			})}
-			<span className="flex flex-start justify-self-end">
+			<span className="flex flex-start ">
 				<p className="mb-4 text-neutral-content font-light">
 					{workout.userCount?.[0].count} saves
 				</p>
