@@ -26,7 +26,7 @@ function Workout({ workout }) {
 					<></>
 				);
 			})}
-			<span className="flex flex-start gap-3">
+			<span className="flex flex-start self-end">
 				<p className="mb-4 text-neutral-content font-light">
 					{workout.userCount?.[0].count} saves
 				</p>
